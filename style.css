@@ -27,13 +27,15 @@ body {
     'a a'
     'b b';
   grid-template-rows: min-content 1fr;
+  background-color: var(--bg-main);
+  border: 0.3rem solid var(--border-black);
 }
 
 .header {
   grid-area: a;
   height: 5rem;
   background-color: var(--bg-header);
-  border: 0.3rem solid var(--border-black);
+  border-bottom: 0.3rem solid var(--border-black);
 }
 
 .main {
@@ -42,8 +44,6 @@ body {
   grid-area: b;
   padding: 2rem;
   background-color: var(--bg-main);
-  border: 0.3rem solid var(--border-black);
-  border-top: unset;
 }
 
 .square {
@@ -167,5 +167,43 @@ body {
     max-width: 30rem;
     margin-left: auto;
     background-color: var(--bg-rectangle-medium);
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .main {
+    grid-template-columns: 1fr 29%;
+    width: 100%;
+    max-width: 124rem;
+    margin: 0 auto;
+  }
+
+  .container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .shapes {
+    align-items: center;
+  }
+
+  .square-1 {
+    top: 0.8rem;
+    left: 16rem;
+  }
+
+  .square-2 {
+    top: 0;
+    left: 2.5rem;
+  }
+
+  .introduce-list {
+    padding-left: 2rem;
+  }
+
+  .rectangle {
+    max-width: 25rem;
+    background-color: var(--bg-rectangle-large);
   }
 }
