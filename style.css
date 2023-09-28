@@ -60,6 +60,7 @@ body {
   border: 0.3rem solid var(--border-black);
   transform: rotate(45deg);
   transition: border-radius .3s linear;
+  animation: circle-to-square 1s ease-in-out;
 }
 
 .square-1 {
@@ -105,6 +106,7 @@ body {
   transition:
     background-color .3s linear,
     transform .3s linear;
+  animation: gelatine 1.5s ease-in-out;
 }
 
 .equal-sign:hover .equal-line {
@@ -131,6 +133,7 @@ body {
   transition:
     border-radius .3s linear,
     transform .3s linear;
+  animation: square-to-circle 1s ease-in-out;
 }
 
 .circle:hover {
@@ -153,6 +156,7 @@ body {
     background-color 0.3s linear,
     border-radius .3s linear,
     box-shadow .3s linear;
+  animation: gelatine 1.5s ease-in-out;
 }
 
 .rectangle:hover {
@@ -271,5 +275,74 @@ body {
 
   .heading {
     color: var(--bg-header);
+  }
+}
+
+/* ANIMATIONS */
+@keyframes circle-to-square {
+  0% {
+    border-radius: 100%;
+    transform: rotate(45deg) translateX(-20rem);
+    box-shadow:
+      2rem 2rem 2rem var(--shadow-black),
+      inset 5rem 1rem var(--shadow-yellow);
+    background-color: var(--bg-header);
+    opacity: 0;
+  }
+
+  100% {
+    border-radius: 0;
+    transform: rotate(-405deg);
+    background-color: var(--bg-square);
+    opacity: 1;
+  }
+}
+
+@keyframes square-to-circle {
+  0% {
+    border-radius: 0;
+    transform: rotate(45deg) translateX(-20rem);
+    box-shadow:
+      2rem 2rem 2rem var(--shadow-black),
+      inset 2rem 2rem var(--bg-header);
+    background: linear-gradient(45deg, var(--bg-circle) 50%, var(--bg-rectangle-large) 50%);
+    opacity: 0;
+  }
+
+  100% {
+    border-radius: 100%;
+    transform: rotate(-405deg);
+    background-color: var(--bg-circle);
+    opacity: 1;
+  }
+}
+
+@keyframes gelatine {
+  0% {
+    box-shadow: 2rem 2rem 2rem var(--shadow-black);
+    transform: scaleX(0.9) translateX(-100%);
+    opacity: 0;
+  }
+
+  20% {
+    box-shadow: 2rem 2rem 2rem var(--shadow-black);
+    transform: scaleX(1);
+  }
+
+  40% {
+    box-shadow: 2rem 2rem 2rem var(--shadow-black);
+    transform: scaleX(1.1);
+  }
+
+  60% {
+    transform: scaleX(1);
+  }
+
+  60% {
+    transform: scaleX(0.9);
+  }
+
+  100% {
+    transform: scaleX(1) translateX(0);
   }
 }
