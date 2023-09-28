@@ -1,12 +1,14 @@
 :root {
-  --bg-main: rgb(28, 166, 28);
-  --bg-header: rgb(106, 152, 32);
-  --bg-square: rgb(255, 0, 0);
-  --bg-lines: rgb(0, 0, 255);
-  --bg-circle: rgb(14, 131, 167);
+  --bg-main: rgb(85, 216, 193);
+  --bg-header: rgb(252, 246, 156);
+  --bg-square: rgb(255, 111, 181);
+  --bg-lines: rgb(255, 153, 102);
+  --bg-circle: rgb(134, 166, 223);
+  --bg-rectangle-medium: rgb(229, 43, 80);
+  --bg-rectangle-large: rgb(0, 87, 146);
   --border-black: rgb(0, 0, 0);
-  --bg-rectangle-medium: rgb(200 55 55);
-  --bg-rectangle-large: rgba(255, 255, 255, 1);
+  --shadow-black: rgba(0, 0, 0, 0.15925);
+  --shadow-yellow: rgb(255, 215, 0);
 }
 
 * {
@@ -55,7 +57,7 @@ body {
   background-color: var(--bg-square);
   border: 0.3rem solid var(--border-black);
   transform: rotate(45deg);
-  transition: transform .3s linear;
+  transition: border-radius .3s linear;
 }
 
 .square-1 {
@@ -66,6 +68,14 @@ body {
 .square-2 {
   top: 2rem;
   left: 3.2rem;
+}
+
+.square:hover {
+  box-shadow:
+    2rem 2rem 2rem var(--shadow-black),
+    inset 5rem 1rem var(--shadow-yellow);
+  background-color: var(--bg-header);
+  border-radius: 100%;
 }
 
 .shapes {
@@ -90,7 +100,22 @@ body {
   list-style-type: none;
   background-color: var(--bg-lines);
   border: 0.3rem solid var(--border-black);
-  cursor: pointer;
+  transition:
+    background-color .3s linear,
+    transform .3s linear;
+}
+
+.equal-sign:hover .equal-line {
+  background-color: var(--bg-rectangle-medium);
+  box-shadow: 2rem 2rem 2rem var(--shadow-black);
+}
+
+.equal-sign:hover .equal-line-1 {
+  transform: rotate(45deg) translate(0, 50%);
+}
+
+.equal-sign:hover .equal-line-2 {
+  transform: rotate(-45deg) translate(0, -50%);
 }
 
 .circle {
@@ -101,6 +126,18 @@ body {
   border-radius: 100%;
   background-color: var(--bg-circle);
   border: 0.3rem solid var(--border-black);
+  transition:
+    border-radius .3s linear,
+    transform .3s linear;
+}
+
+.circle:hover {
+  border-radius: 0;
+  transform: rotate(90deg);
+  box-shadow:
+    2rem 2rem 2rem var(--shadow-black),
+    inset 2rem 2rem var(--bg-header);
+  background: linear-gradient(45deg, var(--bg-circle) 50%, var(--bg-rectangle-large) 50%)
 }
 
 .rectangle {
@@ -110,6 +147,23 @@ body {
   padding-top: 3.2rem;
   background-color: var(--bg-lines);
   border: 0.3rem solid var(--border-black);
+  transition:
+    background-color 0.3s linear,
+    border-radius .3s linear,
+    box-shadow .3s linear;
+}
+
+.rectangle:hover {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 100%;
+  box-shadow:
+    2rem 2rem 2rem var(--shadow-black),
+    inset 2rem 2rem var(--bg-header),
+    inset 4rem 4rem var(--bg-square),
+    inset 6rem 6rem var(--bg-lines),
+    inset 8rem 8rem var(--bg-main);
 }
 
 .heading {
@@ -117,6 +171,14 @@ body {
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
+  transition:
+    margin 0.3s linear,
+    transform 0.3s linear,
+    letter-spacing 0.3s linear;
+}
+
+.rectangle:hover .heading {
+  letter-spacing: 2rem;
 }
 
 @media screen and (min-width: 583px) {
@@ -198,12 +260,12 @@ body {
     left: 2.5rem;
   }
 
-  .introduce-list {
-    padding-left: 2rem;
-  }
-
   .rectangle {
     max-width: 25rem;
     background-color: var(--bg-rectangle-large);
+  }
+
+  .heading {
+    color: var(--bg-header);
   }
 }
