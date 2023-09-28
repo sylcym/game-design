@@ -11,6 +11,7 @@
   --shadow-yellow: rgb(255, 215, 0);
 }
 
+/* RESET STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +23,7 @@ html {
   font-family: sans-serif;
 }
 
+/* SMALL DEVICE STYLES < 583px */
 body {
   height: 100vh;
   display: grid;
@@ -181,6 +183,7 @@ body {
   letter-spacing: 2rem;
 }
 
+/* MEDIUM DEVICE STYLES > 583px && < 900px */
 @media screen and (min-width: 583px) {
   .main {
     grid-template-columns: 1fr min-content;
@@ -232,6 +235,7 @@ body {
   }
 }
 
+/* BIG DEVICE STYLES > 900px */
 @media screen and (min-width: 901px) {
   .main {
     grid-template-columns: 1fr 29%;
