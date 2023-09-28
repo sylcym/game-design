@@ -1,3 +1,120 @@
-h1 {
-  color: blue;
+:root {
+  --bg-main: rgb(28, 166, 28);
+  --bg-header: rgb(106, 152, 32);
+  --bg-square: rgb(255, 0, 0);
+  --bg-lines: rgb(0, 0, 255);
+  --bg-circle: rgb(14, 131, 167);
+  --border-black: rgb(0, 0, 0);
+  --bg-rectangle-medium: rgb(122, 27, 27);
+  --bg-rectangle-large: rgba(255, 255, 255, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    'a a'
+    'b b';
+  grid-template-rows: min-content 1fr;
+}
+
+.header {
+  grid-area: a;
+  height: 5rem;
+  background-color: var(--bg-header);
+  border: 0.3rem solid var(--border-black);
+}
+
+.main {
+  display: grid;
+  grid-template-rows: min-content;
+  grid-area: b;
+  padding: 2rem;
+  background-color: var(--bg-main);
+  border: 0.3rem solid var(--border-black);
+  border-top: unset;
+}
+
+.square {
+  position: relative;
+  width: 24vw;
+  max-width: 7.5rem;
+  height: 24vw;
+  max-height: 7.5rem;
+  background-color: var(--bg-square);
+  border: 0.3rem solid var(--border-black);
+  transform: rotate(45deg);
+  transition: transform .3s linear;
+}
+
+.square-1 {
+  top: 3.2rem;
+  left: 14rem;
+}
+
+.square-2 {
+  top: 2rem;
+  left: 3.2rem;
+}
+
+.shapes {
+  display: flex;
+  align-items: center;
+  column-gap: 3rem;
+  margin-top: 9rem;
+  margin-left: 1.5rem;
+}
+
+.equal-sign {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.equal-line {
+  width: 24vw;
+  max-width: 13rem;
+  height: 4vw;
+  max-height: 2rem;
+  list-style-type: none;
+  background-color: var(--bg-lines);
+  border: 0.3rem solid var(--border-black);
+  cursor: pointer;
+}
+
+.circle {
+  width: 23.5vw;
+  max-width: 9rem;
+  height: 23.5vw;
+  max-height: 9rem;
+  border-radius: 100%;
+  background-color: var(--bg-circle);
+  border: 0.3rem solid var(--border-black);
+}
+
+.rectangle {
+  width: 41vw;
+  margin-top: 0.8rem;
+  margin-left: 5.3rem;
+  padding-top: 3.2rem;
+  background-color: var(--bg-lines);
+  border: 0.3rem solid var(--border-black);
+}
+
+.heading {
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
 }
