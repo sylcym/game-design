@@ -1,0 +1,38 @@
+# Room Renovation Plan
+
+## Objective
+Renovate the room to give it a new look and functionality
+
+## Scope of work
+- Remove old wallpaper and paint the walls a new color
+-  Replace the floor with laminate
+- Add new furniture and accessories
+
+## Tasks
+
+### Task 1 - Design:
+- Prepare a design that takes into account the look and functionality of the room
+- Set a budget
+- Set a work schedule
+
+### Task 2 - Preparation:
+- Remove all furniture and belongings from the room
+- Thoroughly clean the room
+- Check the condition of the walls and floor
+
+### Task 3 - Procurement:
+- Choose building and finishing materials
+- Purchase building and finishing materials
+
+### Task 4 - Renovation work:
+- Repair any damage to the walls
+- Remove the old floor
+- Level the substrate
+- Lay new laminate
+- Prepare the walls for painting
+- Apply two coats of paint
+- Thoroughly clean the room
+
+### Task 5 - Finishing work:
+- Arrange furniture and accessories in the room
+- Thoroughly clean the room
